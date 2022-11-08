@@ -1,3 +1,7 @@
 /* 
     General Styles
 */
+.Img {
+    width: 100 px;
+    height: fit-content;
+}

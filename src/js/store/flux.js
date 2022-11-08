@@ -1,20 +1,58 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			people: [],
+			planets: [],
+			baseURL :"https://www.swapi.tech/api/",
+			
+			people_details:[],
+			
+			list:[],
+			favorite: undefined,
 		},
 		actions: {
+			getItems: async (resource) => {
+				const store = getStore();
+				const response = await fetch(
+					`${store.baseURL}/${resource}`
+				);
+				const body = await response.json();
+					if (!response.ok) return;
+					setStore({
+						[resource]: body.results,
+					})},
+
+			getDetails: async(resource,uid) => {
+				const store = getStore();
+				const response = await fetch(
+					`${store.baseURL}/${resource}/${uid}`
+				);
+				const body = await response.json();
+				if (!response.ok) return;
+				setStore({
+					currentItem: body.result,
+				})},
+
+			AddFavorite: async (resource, uid) => {
+				const store = getStore();
+				const response = await fetch(
+					`${store.baseURL}/${resource}/${uid}`
+				)
+				const body = await response.json();
+				if (!response.ok) return;
+				setStore({
+					favorite: Object.assign({resource},body.result),
+					list: [...store.list, {...body.result, resource}],
+			});},
+
+			deleteFavorite: (deleteFavorite) => {
+				const store = getStore();
+				setStore({
+					list: deleteFavorite,
+				});
+				console.log(store.list);
+			},
+		
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
