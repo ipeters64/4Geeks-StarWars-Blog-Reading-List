@@ -15,6 +15,7 @@ export const Details = (props) => {
             actions.removeCurrentItem();
         }
     }, [])
+    // When user clicks "learn more" this is what they will see below //
     return (
         <div className="container d-flex justify-content-center">
             {store.currentItem && (
