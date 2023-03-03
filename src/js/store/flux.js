@@ -1,3 +1,5 @@
+// defining the functions and hooks here to fully render the application //
+// Here we have the indexes of planets and characters being defined //
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -10,6 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			list:[],
 			favorite: undefined,
 		},
+		// list data is fetched along with the event of interacting with it //
 		actions: {
 			getItems: async (resource) => {
 				const store = getStore();
@@ -32,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					currentItem: body.result,
 				})},
-
+// creating the function of adding characters and planets to a favorites list //
 			AddFavorite: async (resource, uid) => {
 				const store = getStore();
 				const response = await fetch(
@@ -44,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					favorite: Object.assign({resource},body.result),
 					list: [...store.list, {...body.result, resource}],
 			});},
-
+			// defining the action of deleting favorites off of the favorites list //
 			deleteFavorite: (deleteFavorite) => {
 				const store = getStore();
 				setStore({

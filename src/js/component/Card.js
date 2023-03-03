@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-
+// illustrating each character and planet as a card //
 export const Card = ({item, resource}) => {
     const {store, actions}= useContext(Context);
     if (resource === "planets")

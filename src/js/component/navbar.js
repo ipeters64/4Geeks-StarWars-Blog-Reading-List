@@ -17,7 +17,7 @@ export const Navbar = (item, resource) => {
 					<img className="Img"  src="https://marcas-logos.net/wp-content/uploads/2019/11/Star-Wars-Logo-1.png"/>
 				</Link>
 			</div>
-			<div>
+			<div> 
 			<div className="btn-group">
 				
 				<button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

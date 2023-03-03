@@ -4,7 +4,7 @@ import { Card } from "../component/Card";
 import { Context } from "../store/appContext";
 
 export const Details = (props) => {
-
+// view on characters/planets when clicked on more detailed //
     const { store, actions } = useContext(Context);
     const params = useParams();
     useEffect(() => {
