@@ -1,4 +1,7 @@
-Built a starwars databank using swapitech React Flux framework. Html, Bootstrap and Javascript were involved as well.
+Built a starwars databank using swapitech React Flux framework. Html, Bootstrap and Javascript were involved as well. 
+Characters and Planets can be saved under a users' "favorites" category.
+
+Brief descriptions of the characters and planets are given as well. They are displayed as "card" elements that Bootstrap uses and expands to a full description when either a character or planet is clicked on.  
 
 Live Demo:
 
