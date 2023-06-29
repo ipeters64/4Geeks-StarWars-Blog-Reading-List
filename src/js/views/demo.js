@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
-
+// example page to help gauge the what your own should look like //
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
